@@ -5,16 +5,19 @@ import { AppService } from './app.service';
 import { CoffeesModule } from './coffees/coffees.module';
 
 @Module({
-  imports: [CoffeesModule, TypeOrmModule.forRoot({
-    type: 'postgres',
-    host: 'localhost',
-    port: 5432,
-    username: 'postgres',
-    password: 'pass123',
-    database: 'postgres',
-    autoLoadEntities: true,
-    synchronize: true, // Disable this in production
-  })],
+  imports: [
+    CoffeesModule,
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'postgres',
+      password: 'pass123',
+      database: 'postgres',
+      autoLoadEntities: true,
+      synchronize: true, // Disable this in production
+    }),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
