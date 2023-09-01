@@ -19,9 +19,7 @@ export class CoffeesService {
     private readonly flavorRepository: Repository<Flavor>,
     private readonly dataSource: DataSource,
     @Inject(COFFEE_BRANDS) coffeeBrands: string[],
-    private readonly configService: ConfigService,
-    // @Inject(coffeesConfig.KEY)
-    // private readonly coffeesConfiguration: ConfigType<typeof coffeesConfig>,
+    private readonly configService: ConfigService, // @Inject(coffeesConfig.KEY) // private readonly coffeesConfiguration: ConfigType<typeof coffeesConfig>,
   ) {
     const databaseHost = this.configService.get('database.host', 'localhost');
     const coffeesConfig = this.configService.get('coffees');

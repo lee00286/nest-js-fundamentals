@@ -30,7 +30,7 @@ export class CoffeeBrandsFactory {
 @Module({
   imports: [
     TypeOrmModule.forFeature([Coffee, Flavor, Event]),
-    ConfigModule.forFeature(coffeesConfig)
+    ConfigModule.forFeature(coffeesConfig),
   ],
   controllers: [CoffeesController],
   providers: [
